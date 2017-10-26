@@ -17,14 +17,14 @@ public class PersonServicesREST {
 
     @GET
     @Path("/")
-    @Produces(value = MediaType.APPLICATION_XML)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public List<Person> getPeople(){
         return pms.getPeople();
     }
 
     @GET
     @Path("/{personid}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Person getPerson(@PathParam("personid") Long personid){
         return pms.getPerson(personid);
     }
